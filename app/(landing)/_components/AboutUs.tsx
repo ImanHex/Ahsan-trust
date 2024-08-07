@@ -13,7 +13,7 @@ const AboutUs = () => {
             About Us
           </p>
           <h1 className="text-3xl font-semibold leading-10 text-darkBlue mt-1">
-            Ahsan Trust Mark
+            AHSAN TrustMark
           </h1>
         </div>
         <div className="mt-1">

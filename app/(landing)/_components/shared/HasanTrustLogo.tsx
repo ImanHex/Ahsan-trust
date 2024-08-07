@@ -11,7 +11,7 @@ const HasanTrustLogo = () => {
         alt="logo"
       />
       <h1 className="text-base font-semibold leading-none text-darkBlue">
-        Ahsan Trust Mark
+        AHSAN Trustmark
       </h1>
     </div>
   );

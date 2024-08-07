@@ -67,6 +67,12 @@
   }
 }
 
+.gap-100 {
+  display: flex;
+  align-items: flex-start;
+  gap: 450px;
+}
+
 @layer base {
   * {
     @apply border-border;

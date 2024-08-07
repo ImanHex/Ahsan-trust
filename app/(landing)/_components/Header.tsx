@@ -26,7 +26,8 @@ const Header = () => {
         </div>
         <div>
           <p className="text-lg font-normal leading-28 text-darkGrey mt-9">
-            Ahsan Trust is a dedicated research organization committed to <br />
+            AHSAN Trustmark is a dedicated research organization committed to{" "}
+            <br />
             fostering the growth and sustainability of local businesses.
           </p>
         </div>
@@ -45,42 +46,24 @@ const Header = () => {
             Our Partnership
           </p>
 
-          <div className="flex items-start gap-72">
+          <div className="gap-100">
             <div className="flex items-center gap-8 mt-2">
               {partnership.map((partner, index) => (
                 <Image
                   src={partner.url}
                   key={index}
-                  width={100}
-                  height={70}
+                  width={60}
+                  height={60}
                   alt="partnership"
                 />
               ))}
-            </div>
-            <div className="flex items-center gap-5 z-10 header-card">
-              <div className="flex items-center bg-mainWhite py-2 px-6 rounded-3xl mt-20">
-                <Image
-                  src="/assets/People.png"
-                  width={120}
-                  height={66}
-                  alt="people"
-                />
-                <div className="">
-                  <h2 className="text-base font-semibold text-darkBlue">
-                    1K+ People
-                  </h2>
-                  <p className="font-normal	text-xs special-grey">
-                    Successfully Getting a job
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="header-right-small-device">
-        <img src="/assets/LeftImage.png" alt="" />
+        <img src="/assets/LeftImage.png" alt="AhsanTrustBg" />
       </div>
       <div className="header-right ">
         <img src="/assets/LeftImage.png" alt="" />

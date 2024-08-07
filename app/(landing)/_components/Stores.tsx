@@ -1,10 +1,52 @@
-import { categoryFilters, users } from "@/lib/data";
-import React from "react";
-import { FaChevronRight } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa";
-import Status from "./shared/Status";
-import OwnerCard from "./shared/OwnerCard";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { categoryFilters } from "@/lib/data";
+import { getStoreData } from "@/app/services/api";
+
+type Store = {
+  id: number;
+  images_url: string;
+  name: string;
+  details: string;
+  location: string;
+  categories: string;
+  phone: string;
+  time: string;
+};
+
 const Stores = () => {
+  const [stores, setStores] = useState<Store[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchStores = async () => {
+      try {
+        const data = await getStoreData();
+        setStores(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching stores:", error);
+      }
+    };
+    fetchStores();
+  }, []);
+
+  const slideLeft = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? Math.max(0, stores.length - 4) : prevIndex - 1
+    );
+  };
+
+  const slideRight = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex >= stores.length - 4 ? 0 : prevIndex + 1
+    );
+  };
+
+  const visibleStores = stores.slice(currentIndex, currentIndex + 4);
+
   return (
     <section className="mt-44">
       <div className="flex items-end gap-80">
@@ -28,38 +70,35 @@ const Stores = () => {
           ))}
         </div>
         <div className="flex gap-3">
-          <button className="bg-bgGrey py-3 px-5 rounded-3xl	">
+          <button
+            onClick={slideLeft}
+            className="bg-bgGrey py-3 px-5 rounded-3xl	"
+          >
             <FaChevronLeft />
           </button>
-          <button className="bg-darkBlue py-3 px-5 rounded-3xl text-white	">
+          <button
+            onClick={slideRight}
+            className="bg-darkBlue py-3 px-5 rounded-3xl text-white	"
+          >
             <FaChevronRight />
           </button>
         </div>
       </div>
       <div className="card-container mt-8 flex gap-12">
-        {users.map((card, index) => (
-          <div className="card" key={index}>
+        {visibleStores.map((store) => (
+          <div className="card" key={store.id}>
             <div className="card-img">
-              <img src={card.storesInfo.store.storeImage} alt="stores" />
-              <div className="card-status cursor-pointer ">
-                <Status status={card.storesInfo.store.status} />
+              <img src={store.images_url} alt={store.name} />
+              <div className="card-status cursor-pointer">
+                {/* <Status status={} /> */}
               </div>
             </div>
             <div className="card-description mt-5">
               <h3 className="text-normalBlackText cursor-pointer">
-                {card.storesInfo.store.storeName}
+                {store.name}
               </h3>
-              <p className="text-normalGreyText">
-                {card.storesInfo.store.location}
-              </p>
+              <p className="text-normalGreyText">{store.categories}</p>
             </div>
-            <OwnerCard
-              user={{
-                Image: card.Image,
-                Name: card.Name,
-                Occupation: card.Occupation,
-              }}
-            />
           </div>
         ))}
       </div>

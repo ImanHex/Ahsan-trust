@@ -15,16 +15,16 @@ export const links = [
 
 export const partnership = [
   {
-    url: "/assets/PartnershipLogo1.png",
+    url: "https://pmua.or.th/wp-content/uploads/2023/12/Logo-mhesi.webp",
   },
   {
-    url: "/assets/PartnershipLogo2.png",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvEk8tkGvrxSe-s_vNasCNAiFFyow5qOsvkg&s",
   },
   {
-    url: "/assets/PartnershipLogo3.png",
+    url: "https://research.buu.ac.th/web2019/wp-content/uploads/2023/03/22223-8.png",
   },
   {
-    url: "/assets/PartnershipLogo4.png",
+    url: "https://upload.wikimedia.org/wikipedia/th/9/95/Ftu_logo.png",
   },
 ];
 
@@ -47,52 +47,52 @@ export const users = [
   {
     id: "1",
     Image: "/assets/owner.jpg",
-    Name: "Salam",
+    Name: "Lobby Cafe",
     Occupation: "Youtuber, Programmer",
 
     storesInfo: {
       store: {
         id: "1",
-        storeImage: "/assets/StoreImage.webp",
+        storeImage: "/assets/LobbyCafe.jpeg",
         description: "",
         status: "Popular",
-        storeName: "Hijabi Al Halumi",
+        storeName: "Lobby Cafe",
         location: "Yala",
-        category: "Clothes",
+        category: "Cafe",
       },
     },
   },
   {
     id: "2",
     Image: "/assets/owner.jpg",
-    Name: "Salam",
+    Name: "Make Cafe",
     Occupation: "Youtuber, Programmer",
 
     storesInfo: {
       store: {
         id: "2",
-        storeImage: "/assets/StoreImage.webp",
+        storeImage: "/assets/makecafe.jpeg",
         status: "Popular",
-        storeName: "Hijabi Al Halumi",
+        storeName: "Make Cafe Yala",
         location: "Yala",
-        category: "Clothes",
+        category: "Cafe",
       },
     },
   },
   {
     id: "3",
     Image: "/assets/owner.jpg",
-    Name: "Salam",
+    Name: "ขนมหวานน้ำตาลไหม้",
     Occupation: "Youtuber, Programmer",
     PhoneNumber: "0774501852",
     storesInfo: {
       store: {
         id: "3",
-        storeImage: "/assets/StoreImage.webp",
+        storeImage: "/assets/ขนมหวาน.jpeg",
         status: "Popular",
-        storeName: "Hijabi Al Halumi",
+        storeName: "ขนมหวานน้ำตาลไหม้",
         location: "Yala",
-        category: "Clothes",
+        category: "Cafe",
       },
     },
   },
